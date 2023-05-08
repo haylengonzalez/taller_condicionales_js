@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METROS GASTADOS</title>
+</head>
+<body>
+    <form name="formulario">
+    Digite los metros de agua: <input type="text" name="metros_Agua" >
+    Costo Agua: <input type="text" name="costo">
+    <input type="button" value="Calcular"  onclick="calcular()">
+    </form>
+
+    <script type="text/Javascript">
+    function calcular() { 
+        metros_Agua = parseInt(document.formulario.metros_Agua.value);
+        let cobro_adicional;
+
+        if (metros_Agua <50){
+            cobro_adicional = 0;
+        }
+
+        else if (metros_Agua > 50 && metros_Agua <=200 ){
+            cobro_adicional = 2000 * (metros_Agua - 50);
+        }
+
+        else{
+            cobro_adicional = 3000  * (metros_Agua - 50);
+        }
+        let costo_final = 10000 + cobro_adicional;
+
+        document.formulario.costo.value = costo_final;
+
+    }
+    </script>
+</body>
+</html>

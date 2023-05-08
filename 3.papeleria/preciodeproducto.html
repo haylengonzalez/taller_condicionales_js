@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calcular precio de un artículo</title>
+	<script>
+		function calcularPrecio() {
+			var precioCosto = document.getElementById("precioCosto").value;
+			var ganancia;
+			if (precioCosto < 3000) {
+				ganancia = precioCosto * 0.15;
+			} else if (precioCosto >= 3000 && precioCosto <= 6000) {
+				ganancia = 500;
+			} else {
+				ganancia = precioCosto * 0.25;
+			}
+			var precioFinal = parseFloat(precioCosto) + parseFloat(ganancia);
+			document.getElementById("precioFinal").innerHTML = "El precio final es de $" + precioFinal.toFixed(2);
+		}
+	</script>
+</head>
+
+<body bgcolor="purple">
+
+	<h1>Calcular precio de un artículo</h1>
+	<p>Ingrese el precio de costo del artículo:</p>
+	<input type="number" id="precioCosto"><br><br>
+	<button onclick="calcularPrecio()">Calcular precio final</button><br><br>
+	<p id="precioFinal"></p>
+</body>
+</html>
